@@ -6,6 +6,7 @@ import {
 } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import auth from "../../firebase";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isAuth, setAuth] = useState(null);
@@ -24,9 +25,9 @@ const Header = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-white shadow-sm py-2">
         <div className="container">
-          <a className="navbar-brand fw-bold fs-4" href="/">
+          <Link className="navbar-brand fw-bold fs-4" to="/">
             TaskMaster
-          </a>
+          </Link>
 
           <button
             className="navbar-toggler"
@@ -41,15 +42,15 @@ const Header = () => {
             <ul className="navbar-nav align-items-center gap-3">
 
               <li className="nav-item">
-                <a className="nav-link fw-semibold" href="/">
+                <Link className="nav-link fw-semibold" to="/">
                   Home
-                </a>
+                </Link>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link fw-semibold" href="/addTask">
+                <Link className="nav-link fw-semibold" to="/addTask">
                   Add Task
-                </a>
+                </Link>
               </li>
 
               {/* Profile + Logout */}
